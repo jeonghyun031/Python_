@@ -1,8 +1,8 @@
-import os, usecsv
+import csv
 import numpy as np
-os.chdir(r'C:\\user')
-quest - np.array(usecsv.switch(usecsv.opencsv('quest.csv')))
-print(quest)
-
-quest [quest > 5] = 5
-print(quest)
+f = open('설문.csv', 'r')
+new = csv.reader(f)
+quest = np.array(list(new))
+quest = quest.astype('int32')
+quest[quest > 5] = 5
+quest
